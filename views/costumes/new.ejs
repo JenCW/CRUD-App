@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New Costume</title>
+</head>
+<body>
+    <h1>Add a New Costume</h1>
+    <form action="/costumes" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br>
+
+        <label for="style">Style:</label>
+        <input type="text" name="style" id="style" required><br>
+
+        <label for="size">Size:</label>
+        <input type="text" name="size" id="size" required><br>
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color" required><br>
+
+        <label for="description">Description:</label>
+        <textarea name="description" id="description"></textarea><br>
+
+        <button type="submit">Add Costume</button>
+    </form>
+    <a href="/costumes">Back to All Costumes</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Costume</title>
+</head>
+<body>
+    <h1>Edit Costume: <%= costume.name %></h1>
+    <form action="/costumes/<%= costume._id %>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= costume.name %>" required><br>
+
+        <label for="style">Style:</label>
+        <input type="text" name="style" id="style" value="<%= costume.style %>" required><br>
+
+        <label for="size">Size:</label>
+        <input type="text" name="size" id="size" value="<%= costume.size %>" required><br>
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color" value="<%= costume.color %>" required><br>
+
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required><%= costume.description %></textarea><br>
+
+        <button type="submit">Update Costume</button>
+    </form>
+    <a href="/costumes/<%= costume._id %>">Back to Details</a>
+</body>
+</html>

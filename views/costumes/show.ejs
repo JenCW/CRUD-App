@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costume Details</title>
+</head>
+<body>
+    <h1><%= costume.name %></h1>
+    <p><strong>Style:</strong> <%= costume.style %></p>
+    <p><strong>Size:</strong> <%= costume.size %></p>
+    <p><strong>Color:</strong> <%= costume.color %></p>
+    <p><strong>Description:</strong> <%= costume.description %></p>
+    <a href="/costumes">Back to All Costumes</a>
+    <a href="/costumes/<%= costume._id %>/edit">Edit</a>
+    <form action="/costumes/<%= costume._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

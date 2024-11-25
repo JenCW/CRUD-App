@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costumes - Index</title>
+</head>
+<body>
+    <h1>All Costumes</h1>
+    <a href="/costumes/new">Add New Costume</a>
+    <ul>
+        <% costumes.forEach(costume => { %>
+            <li>
+                <a href="/costumes/<%= costume._id %>"><%= costume.name %></a>
+                (<a href="/costumes/<%= costume._id %>/edit">Edit</a>)
+                <form action="/costumes/<%= costume._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
