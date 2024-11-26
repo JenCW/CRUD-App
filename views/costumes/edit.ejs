@@ -1,30 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Costume</title>
-</head>
-<body>
-    <h1>Edit Costume: <%= costume.name %></h1>
-    <form action="/costumes/<%= costume._id %>?_method=PUT" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" value="<%= costume.name %>" required><br>
+<div class="container mt-5">
 
-        <label for="style">Style:</label>
-        <input type="text" name="style" id="style" value="<%= costume.style %>" required><br>
 
-        <label for="size">Size:</label>
-        <input type="text" name="size" id="size" value="<%= costume.size %>" required><br>
-
-        <label for="color">Color:</label>
-        <input type="text" name="color" id="color" value="<%= costume.color %>" required><br>
-
-        <label for="description">Description:</label>
-        <textarea name="description" id="description" required><%= costume.description %></textarea><br>
-
-        <button type="submit">Update Costume</button>
+    <h1 class="text-center text-primary mb-4" style="background-color: #ff12d7;"><%= action === 'Edit' ? 'Edit Costume' : 'Add New Costume' %></h1>
+    <form action="<%= action === 'Edit' ? `/costumes/${costume._id}?_method=PUT` : '/costumes' %>" method="POST" class="p-4 bg-light border rounded shadow">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" id="name" value="<%= costume?.name || '' %>" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="style" class="form-label">Style</label>
+            <select name="style" id="style" class="form-select" required>
+                <option value="" disabled selected>Select Style</option>
+                <option value="Lyrical" <%= costume?.style === 'Lyrical' ? 'selected' : '' %>>Lyrical</option>
+                <option value="Contemporary" <%= costume?.style === 'Contemporary' ? 'selected' : '' %>>Contemporary</option>
+                <!-- Add more options here -->
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="size" class="form-label">Size</label>
+            <select name="size" id="size" class="form-select" required>
+                <option value="" disabled selected>Select Size</option>
+                <option value="CS" <%= costume?.size === 'CS' ? 'selected' : '' %>>CS</option>
+                <!-- Add more sizes -->
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="color" class="form-label">Color</label>
+            <input type="text" name="color" id="color" value="<%= costume?.color || '' %>" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" id="description" class="form-control" rows="4" required><%= costume?.description || '' %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary"style="background-color: #ff12d7;"><%= action === 'Edit' ? 'Update Costume' : 'Add Costume' %></button>
     </form>
-    <a href="/costumes/<%= costume._id %>">Back to Details</a>
-</body>
-</html>
+</div>

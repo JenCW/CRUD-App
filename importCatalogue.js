@@ -21,11 +21,14 @@ const importCatalogue = (filePath) => {                         // Define the  f
     .pipe(csvparser())                                          // Method used to Parse the CSV data
     .on('data', (row) => {                                      // part of the fs.createReadStream method, and cvsparser method.  It acts as a mediary and registers a callback function each time a  row  is read
         costumes.push({                                         // Method to Push  data into the costumes array
-            name: row.Name,                                     // Property being parsed from the file and assigned to the Model property
+            name: row.Name,
+            description: row.Description,                        // Property being parsed from the file and assigned to the Model property
+            details: row.Details,
             style: row.Style,                                   // Property being parsed from the file and assigned to the Model property
             size: row.Size,                                     // Assign the data to the respective properties
             color: row.Color,                                   // Assign the data to the respective properties
-            description: row.Description                        // Assign the data to the respective properties
+            main_image : row.Main_Image,
+            images: row.Images                        // Assign the data to the respective properties
         });
         })
     .on('end', async () => {    // When the parsing is complete

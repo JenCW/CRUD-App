@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Costume Details</title>
-</head>
-<body>
-    <h1><%= costume.name %></h1>
-    <p><strong>Style:</strong> <%= costume.style %></p>
-    <p><strong>Size:</strong> <%= costume.size %></p>
-    <p><strong>Color:</strong> <%= costume.color %></p>
-    <p><strong>Description:</strong> <%= costume.description %></p>
-    <a href="/costumes">Back to All Costumes</a>
-    <a href="/costumes/<%= costume._id %>/edit">Edit</a>
-    <form action="/costumes/<%= costume._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-    </form>
-</body>
-</html>
+
+<div class="container mt-5">
+    <div class="card shadow-lg" style="background-color:#fdeefb; border: 2cap solid rgb(4, 240, 248);">
+        <div class="card-body">
+            <h2 class="card-title text-primary fw-bold"><%= costume.name %></h2>
+            <p class="card-text">
+                <strong>Style:</strong> <%= costume.style %><br>
+                <strong>Size:</strong> <%= costume.size %><br>
+                <strong>Color:</strong> <%= costume.color %><br>
+                <strong>Description:</strong> <%= costume.description %>
+            </p>
+        </div>
+    </div>
+    <div class="mt-4">
+        <a href="/costumes/<%= costume._id %>/edit" class="btn btn-outline-secondary" style="color:aqua;background-color: #ff12d7;">Edit Costume</a>
+        <form action="/costumes/<%= costume._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-outline-danger" >Delete Costume</button>
+        </form>
+        <a href="/costumes" class="btn btn-outline-secondary" style="color: #ec03a6; background-color: #003d66;">Back to Costumes</a>
+    </div>
+</div>

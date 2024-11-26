@@ -1,30 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a New Costume</title>
-</head>
-<body>
-    <h1>Add a New Costume</h1>
-    <form action="/costumes" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" required><br>
-
-        <label for="style">Style:</label>
-        <input type="text" name="style" id="style" required><br>
-
-        <label for="size">Size:</label>
-        <input type="text" name="size" id="size" required><br>
-
-        <label for="color">Color:</label>
-        <input type="text" name="color" id="color" required><br>
-
-        <label for="description">Description:</label>
-        <textarea name="description" id="description"></textarea><br>
-
-        <button type="submit">Add Costume</button>
+<div class="container mt-5">
+    <h1 class="text-center text-pink mb-4">Add New Costume</h1>
+    <form action="/costumes" method="POST" class="p-5 rounded shadow-lg bg-light border border-turquoise" style="box-shadow: rgb(238, 21, 129)">
+        <div class="mb-3">
+            <label for="name" class="form-label text-turquoise">Name</label>
+            <input type="text" class="form-control border-pink" id="name" name="name" placeholder="Enter costume name" required>
+        </div>
+        <div class="mb-3">
+            <label for="style" class="form-label text-turquoise">Style</label>
+            <select id="style" name="style" class="form-select border-pink" required>
+                <option value="" disabled selected>Select a style</option>
+                <option value="Lyrical">Lyrical</option>
+                <option value="Contemporary">Contemporary</option>
+                <option value="Ballet">Ballet</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Hip Hop">Hip Hop</option>
+                <option value="Musical Theater">Musical Theater</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="size" class="form-label text-turquoise">Size</label>
+            <select id="size" name="size" class="form-select border-pink" required>
+                <option value="" disabled selected>Select a size</option>
+                <option value="CXS">CXS</option>
+                <option value="CS">CS</option>
+                <option value="CM">CM</option>
+                <option value="CL">CL</option>
+                <option value="CXL">CXL</option>
+                <option value="AXS">AXS</option>
+                <option value="AS">AS</option>
+                <option value="AM">AM</option>
+                <option value="AL">AL</option>
+                <option value="AXL">AXL</option>
+                <option value="No_Match">No Match</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="color" class="form-label text-turquoise">Color</label>
+            <input type="text" class="form-control border-pink" id="color" name="color" placeholder="Enter color" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label text-turquoise">Description</label>
+            <textarea class="form-control border-pink" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="details" class="form-label text-turquoise">Details</label>
+            <textarea class="form-control border-pink" id="details" name="details" rows="3" placeholder="Enter additional details"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="main_image" class="form-label text-turquoise">Main Image URL</label>
+            <input type="text" class="form-control border-pink" id="main_image" name="main_image" placeholder="Enter main image URL">
+        </div>
+        <div class="mb-3">
+            <label for="images" class="form-label text-turquoise">Additional Image URLs</label>
+            <textarea class="form-control border-pink" id="images" name="images" rows="3" placeholder="Enter additional image URLs, separated by commas"></textarea>
+        </div>
+        <button type="submit" class="btn btn-turquoise w-100">Add Costume</button>
     </form>
-    <a href="/costumes">Back to All Costumes</a>
-</body>
-</html>
+</div>

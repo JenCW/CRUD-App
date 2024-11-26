@@ -1,0 +1,26 @@
+.text-turquoise {
+    color: #40E0D0;
+}
+
+.border-turquoise {
+    border-color: #40E0D0 !important;
+}
+
+.text-pink {
+    color: #FF69B4;
+}
+
+.border-pink {
+    border-color: #FF69B4 !important;
+}
+
+.btn-turquoise {
+    background-color: #40E0D0;
+    color: white;
+    border: none;
+}
+
+.btn-turquoise:hover {
+    background-color: #3bd6c1;
+    color: #fff;
+}

@@ -28,7 +28,10 @@ const create = async(req, res) => {
 //EDIT: Display the form to edit a specific costume
 const edit = async (req, res) => {
     const costume = await Costume.findById(req.params.id); // Find the specific costume by id
-    res.render('costumes/edit', { costume }); // Render the edit.ejs view, passing the costume object to the view
+    res.render('costumes/edit', {
+      costume,
+    action:'Edit'
+   }); // Render the edit.ejs view, passing the costume object to the view
 }
 
 //UPDATE: Update a costIME in the database
