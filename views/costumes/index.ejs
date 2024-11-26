@@ -1,24 +1,20 @@
-
 <div class="container mt-5">
     <!-- Header Section -->
     <div class="text-center">
-        <h1 class="display-5">Available Costumes</h1>
-        <p class="lead">Browse through our collection and find your perfect match!</p>
+        <h1 class="display-5"> Costumes: Inventory On Hand</h1>
+        <p class="lead">Collection Of Inventory On Hand</p>
     </div>
-
     <!-- Costume Cards Grid -->
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
         <% costumes.forEach(costume => { %>
         <div class="col">
             <div class="card h-100" style="box-shadow: 0 10px 30px rgba(161, 22, 131, 0.5), 0 6px 6px rgb(206, 67, 169); border: turquoise 3px solid;">
                 <img
-                     src="<%= costume.main_image.includes('dropbox.com')
-                     ? costume.main_image.replace('www.dropbox.com', 'dl.dropboxusercontent.com').replace('?dl=0', '?raw=1')
-                    : costume.main_image %>"
+                    src="<%= costume.main_image.includes('dropbox.com')? costume.main_image.replace('www.dropbox.com','dl.dropboxusercontent.com').replace('?dl=0', '?raw=1')
+                    :costume.main_image %>"
                     class="card-img-top img-fluid"
                      alt="<%= costume.name %>"
                      style="object-fit: contain; height: 200px; width: 100%; background-color: #f8f8f8;">
-
                 <div class="card-body">
                     <h5 class="card-title"><%= costume.name %></h5>
                     <p class="card-text">

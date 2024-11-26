@@ -1,13 +1,22 @@
 
-<div class="container mt-5">
-    <div class="card shadow-lg" style="background-color:#fdeefb; border: 2cap solid rgb(4, 240, 248);">
+<div class="container mt-5"><!-- added a bootstrap container class here> -->
+    <div class="card shadow-lg" style="background-color:#fdeefb; border: 2px solid rgb(4, 240, 248);">
         <div class="card-body">
+            <img
+                src="<%= costume.main_image.includes('dropbox.com')
+                ? costume.main_image.replace('www.dropbox.com', 'dl.dropboxusercontent.com').replace('?dl=0', '?raw=1')
+                : costume.main_image %>"
+                class="card-img-top img-fluid"
+                alt="<%= costume.name %>"
+                style="object-fit: contain; height: 200px; width: 100%; background-color: #f8f8f8;">
+          
+
             <h2 class="card-title text-primary fw-bold"><%= costume.name %></h2>
             <p class="card-text">
-                <strong>Style:</strong> <%= costume.style %><br>
-                <strong>Size:</strong> <%= costume.size %><br>
-                <strong>Color:</strong> <%= costume.color %><br>
-                <strong>Description:</strong> <%= costume.description %>
+            <strong>Style:</strong> <%= costume.style %><br>
+            <strong>Size:</strong> <%= costume.size %><br>
+            <strong>Color:</strong> <%= costume.color %><br>
+            <strong>Description:</strong> <%= costume.description %>
             </p>
         </div>
     </div>
